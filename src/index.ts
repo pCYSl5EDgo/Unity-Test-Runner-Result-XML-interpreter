@@ -22,22 +22,7 @@ function Run() {
         core.debug("Path : " + path);
         const text = fs.readFileSync(path, { encoding: "utf8" });
         core.debug("Text : " + text);
-        const json = parser.convertToJsonString(text, {
-            attributeNamePrefix: "@_",
-            attrNodeName: "attr", //default is 'false'
-            textNodeName: "#text",
-            ignoreAttributes: false,
-            ignoreNameSpace: false,
-            allowBooleanAttributes: false,
-            parseNodeValue: true,
-            parseAttributeValue: false,
-            trimValues: true,
-            cdataTagName: "__cdata", //default is 'false'
-            cdataPositionChar: "\\c",
-            localeRange: "", //To support non english character in tag/attribute values.
-            parseTrueNumberOnly: false,
-        });
-        core.setOutput("text", json);
+        core.setOutput("text", text);
     } catch (error) {
         core.setFailed(error.message);
     }
