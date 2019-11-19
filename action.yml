@@ -7,7 +7,7 @@ inputs:
     required: true
 outputs:
   success:
-    description: 'Are tests all success.\nValues is \'true\' or \'false\''
+    description: 'Are tests all success.true or false'
   testcasecount:
     description: 'test-case count'
   total:
