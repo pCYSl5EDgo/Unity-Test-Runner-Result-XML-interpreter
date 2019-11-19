@@ -25,15 +25,16 @@ function Run() {
     try {
         const text = fs.readFileSync(path, { encoding: "utf8" });
         const resultXml = new XML(text);
-        const root = resultXml.get("test-run").at(0);
-        SetOutputFromProperty(root, "testcasecount");
-        SetOutputFromProperty(root, "total");
-        SetOutputFromProperty(root, "passed");
-        SetOutputFromProperty(root, "failed");
-        SetOutputFromProperty(root, "inconclusive");
-        SetOutputFromProperty(root, "skipped");
-        const success: Boolean = !root.getProperty("result").startsWith("Failed");
-        core.setOutput("success", success.toString());
+        // const root = resultXml.get("test-run").at(0);
+        // SetOutputFromProperty(root, "testcasecount");
+        // SetOutputFromProperty(root, "total");
+        // SetOutputFromProperty(root, "passed");
+        // SetOutputFromProperty(root, "failed");
+        // SetOutputFromProperty(root, "inconclusive");
+        // SetOutputFromProperty(root, "skipped");
+        // const success: Boolean = !root.getProperty("result").startsWith("Failed");
+        core.setOutput("total", resultXml.get("test-run").size().toString());
+        core.setOutput("success", "true");
     } catch (error) {
         core.setFailed(error.message);
     }
