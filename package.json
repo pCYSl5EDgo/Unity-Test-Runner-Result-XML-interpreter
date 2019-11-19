@@ -11,8 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "fast-xml-parser": "^3.14.0",
-    "os": "^0.1.1"
+    "os": "^0.1.1",
+    "sxml": "^1.0.4"
   },
   "devDependencies": {
     "@types/node": "^12.12.8",

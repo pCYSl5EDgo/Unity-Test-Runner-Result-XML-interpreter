@@ -6,8 +6,20 @@ inputs:
     description: 'A file to read'
     required: true
 outputs:
-  text:
-    description: 'A file content read from path'
+  success:
+    description: 'Are tests all success.\nValues is \'true\' or \'false\''
+  testcasecount:
+    description: 'test-case count'
+  total:
+    description: 'total test count'
+  passed:
+    description: 'passed test count'
+  failed:
+    description: 'failed test count'
+  inconclusive:
+    description: '?'
+  skipped:
+    description: 'skipped test count'
 runs:
   using: 'node12'
   main: 'dist/index.js'
