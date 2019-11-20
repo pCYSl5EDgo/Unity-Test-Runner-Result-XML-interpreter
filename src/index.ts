@@ -21,11 +21,12 @@ function SetOutputFromProperty(node: {
     core.setOutput(item, node.$[item]);
 }
 
+
 function Run() {
     const path = getAbsolutePath(core.getInput("path", { required: true }));
     try {
         const text = fs.readFileSync(path, { encoding: "utf8" });
-        conv.parseString(text, (error, resultXml) => {
+        conv.parseString(text, (error: Error, resultXml) => {
             const root = resultXml["test-run"];
             SetOutputFromProperty(root, "testcasecount");
             SetOutputFromProperty(root, "total");
