@@ -35,8 +35,8 @@ function Run() {
             SetOutputFromProperty(root, "failed");
             SetOutputFromProperty(root, "inconclusive");
             SetOutputFromProperty(root, "skipped");
-            var success = !root.getProperty("result").startsWith("Failed");
-            core.setOutput("success", "true");
+            var success = !root.$["result"].startsWith("Failed");
+            core.setOutput("success", success.toString());
         });
     }
     catch (error) {
