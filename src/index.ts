@@ -33,7 +33,7 @@ function Run() {
             SetOutputFromProperty(root, "failed");
             SetOutputFromProperty(root, "inconclusive");
             SetOutputFromProperty(root, "skipped");
-            const success: Boolean = !root.getProperty("result").startsWith("Failed");
+            const success: Boolean = !root.$["result"].startsWith("Failed");
             core.setOutput("success", "true");
         });
 
